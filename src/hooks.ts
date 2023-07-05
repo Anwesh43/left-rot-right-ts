@@ -1,6 +1,6 @@
 import {useState, useEffect, CSSProperties} from 'react'
 
-export const useAnimatedScale = (scGap : number = 0.01, delay : number = 20) => {
+export const useAnimatedScale = (scGap : number = 0.01, delay : number = 30) => {
     const [scale, setScale] = useState<number>(0)
     const [animated, setAnimated] = useState<boolean>(false)
     return {
@@ -69,8 +69,8 @@ export const useStyle = (w : number, h : number, scale : number) => {
         barStyle() : CSSProperties {
             return {
                 position,
-                left: `${-w / 2 + (w / 2 - size) * divideScale(sf, 0, 3)}px`, 
-                top: `${-hSize / 2 + (-h / 2) * divideScale(sf, 2, 3)}px`,
+                left: `${-w / 2 + (w / 2 - size) * divideScale(sf, 0, 3) - (h / 2) * divideScale(sf, 2, 3)}px`, 
+                top: `${-hSize / 2}px`,
                 width: `${size}px`,
                 height: `${hSize}px`,
                 background 
